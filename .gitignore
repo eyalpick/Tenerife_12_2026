@@ -1,0 +1,14 @@
+# Whitelist: only the public site is tracked. Everything else (PDFs with traveler details, notes, scripts) stays local.
+*
+!.gitignore
+!index.html
+!styles.css
+!app.js
+!weather.js
+!data/
+!data/bookings.js
+!data/itinerary.js
+!data/routes.js
+!assets/
+!assets/travelin_lady_meeting_point.jpg
+!assets/teide_clothing_recommendations.png

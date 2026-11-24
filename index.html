@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>לוח בקרה – טנריף דצמבר 2026</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+
+  <header class="header-card">
+    <div>
+      <h1>טנריף 2026 🌋</h1>
+      <p><i class="fa-regular fa-calendar-days"></i> 5–12 בדצמבר 2026 | איל &amp; מירי</p>
+    </div>
+    <div class="countdown" id="countdown-box">
+      <div class="cd-label" id="cd-label">זמן להמראה:</div>
+      <div class="cd-digits" id="cd-digits">
+        <div><b id="cd-d">00</b><span>ימים</span></div>
+        <div><b id="cd-h">00</b><span>שעות</span></div>
+        <div><b id="cd-m">00</b><span>דקות</span></div>
+        <div><b id="cd-s">00</b><span>שניות</span></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="grid">
+    <aside class="sidebar">
+      <section class="card" id="flights-card"></section>
+      <section class="card" id="car-card"></section>
+      <section class="card" id="lodging-card"></section>
+      <section class="card" id="docs-card"></section>
+    </aside>
+
+    <main>
+      <section class="card">
+        <h2 class="card-title"><i class="fa-solid fa-map-location-dot"></i> מפת הטיול</h2>
+        <div class="map-filters" id="map-filters"></div>
+        <div id="map"></div>
+        <div class="legend" id="legend"></div>
+      </section>
+
+      <section class="card weather-top">
+        <h2 class="card-title"><i class="fa-solid fa-cloud-sun"></i> מזג אוויר חי – 3 אזורים</h2>
+        <div id="weather-summary" class="weather-summary"></div>
+        <button class="btn purple" id="weather-btn"><i class="fa-solid fa-rotate"></i> עדכן תחזית חי</button>
+        <span class="muted small" id="weather-ts"></span>
+      </section>
+
+      <div class="accordion-controls">
+        <div class="muted"><i class="fa-solid fa-list-check"></i> ימי הטיול (לחץ על יום לפתיחה/סגירה)</div>
+        <button class="btn ghost" id="toggle-all"><i class="fa-solid fa-angles-down"></i> פתח את כל הימים</button>
+      </div>
+      <div id="days"></div>
+    </main>
+  </div>
+</div>
+
+<div class="drawer-backdrop" id="drawer-backdrop"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head"><h3 id="drawer-title"></h3><button class="drawer-close" id="drawer-close" aria-label="סגור"><i class="fa-solid fa-xmark"></i></button></div>
+  <div class="drawer-body" id="drawer-body"></div>
+</aside>
+
+<div class="lightbox" id="lightbox"><img id="lightbox-img" alt=""></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="data/bookings.js"></script>
+<script src="data/itinerary.js"></script>
+<script src="data/routes.js"></script>
+<script src="weather.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
