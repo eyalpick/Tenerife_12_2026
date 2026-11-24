@@ -1393,8 +1393,12 @@ const ITINERARY = [
    {
     "time": "14:25–15:25",
     "tag": "מומלץ",
-    "html": "<strong>ארוחת צהריים חגיגית של דגים טריים בנמל <code>Los Abrigos</code>:</strong> מסעדת דגים מול המעגן (<code>Los Roques</code>). דגים כשרים טריים למירי, ופירות ים/בשרים לאיל (שעה אחת).",
-    "sub": [],
+    "html": "<strong>ארוחת צהריים חגיגית של דגים טריים בנמל <code>Los Abrigos</code> (רציף <code>C. La Marina</code>):</strong> בחירה במקום מול המעגן – דגים כשרים טריים במשקל למירי (<code>Vieja</code>, <code>Dorada</code>, <code>Lubina</code>, <code>Cherne</code>, <code>Sama</code>), ופירות ים/בשרים לאיל (שעה אחת). שלוש המומלצות הפעילות והפתוחות בשישי על הרציף:",
+    "sub": [
+     "<strong><code>Restaurante la Tasquita del Puerto</code> (<code>C. La Marina, 32</code>, ⭐ <code>4.6</code>):</strong> פתוחה בשישי <code>10:00–21:30</code>, טל' <code>+34 822 90 88 26</code> (הזמנה אונליין באתר <code>tasquitadelpuerto.com/reservas/</code>). דג קנרי טרי במשקל, דניס/לברק וטונה למירי; אורז פירות ים ומנות בשר לאיל.",
+     "<strong><code>Restaurante Los Abrigos</code> (<code>C. La Marina, 3</code>, ⭐ <code>4.5</code>):</strong> פתוחה בשישי <code>12:00–22:00</code> (סגורה ד'-ה'), טל' <code>+34 922 17 02 64</code>. ויטרינת דגים טריים על קרח לבחירה במשקל ישר מסירות הדייגים, לצד פירות ים ומנות בשר.",
+     "<strong><code>Restaurante El Mirador de los Abrigos</code> (<code>C. La Marina, 7</code>, ⭐ <code>4.4</code>):</strong> פתוחה בשישי <code>13:00–22:00</code>, טל' <code>+34 922 74 94 48</code> / ווטסאפ <code>+34 604 24 73 40</code> (או <code>Resy</code>). מרפסת פנורמית ממש מעל המים, דגים טריים ופאייה."
+    ],
     "stops": [
      3
     ]
@@ -1493,11 +1497,11 @@ const ITINERARY = [
     "cat": "restaurant",
     "prio": "מומלץ",
     "time": "14:25 - 15:25",
-    "addr": "Calle la Marina, 16, 38639 Los Abrigos",
+    "addr": "Calle La Marina, 38618 Los Abrigos",
     "lat": 28.0298,
     "lng": -16.5912,
     "maps": "https://www.google.com/maps/place/Puerto+de+los+Abrigos/@28.027937,-16.592819,15z/data=!3m1!4b1!4m6!3m5!1s0xc6a9f7cb9712629:0x8ee104e2ef948119!8m2!3d28.0279375!4d-16.592819!16s%2Fg%2F11xl0jwps",
-    "notes": "ארוחת צהריים חגיגית מול המעגן: דגים כשרים טריים למירי, פירות ים לאיל. שימו לב: Restaurante Los Roques נסגרה לצמיתות – מומלץ לבחור במסעדות הפעילות על רציף C. La Marina (כגון Restaurante Los Abrigos או Restaurante El Mirador de los Abrigos)."
+    "notes": "ארוחת צהריים חגיגית מול המעגן (דגים כשרים טריים במשקל למירי, פירות ים/בשרים לאיל). 3 מסעדות פעילות ומומלצות לבחירה במקום על רציף C. La Marina (פתוחות בשישי): Restaurante la Tasquita del Puerto (#32, ⭐ 4.6, 10:00–21:30, +34 822 90 88 26), Restaurante Los Abrigos (#3, ⭐ 4.5, 12:00–22:00, +34 922 17 02 64), ו-Restaurante El Mirador de los Abrigos (#7, ⭐ 4.4, 13:00–22:00, +34 922 74 94 48)."
    },
    {
     "n": 4,
