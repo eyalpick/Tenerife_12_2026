@@ -84,18 +84,27 @@ function setMapFilter(f) {
 /* ---------- days ---------- */
 const items = []; // for the drawer
 function renderDays() {
+  items.length = 0;
   $("days").innerHTML = ITINERARY.map(day => {
     const dd = day.date.slice(0, 5);
     const bookings = ACTIVITIES.filter(a => a.days.includes(day.num)).map(a => `<div class="booking"><h4><i class="fa-solid ${a.icon}"></i> ${a.title}</h4>
       <div class="kv"><b>אישור:</b> <code>${a.ref}</code></div><div class="kv">🕒 ${a.when}</div><div class="kv">📍 ${a.meet}</div><div class="kv">💶 ${a.price}</div>
       <div class="btnrow"><a class="btn" target="_blank" rel="noopener" href="${a.maps}"><i class="fa-solid fa-map-pin"></i> Google Maps</a></div></div>`).join("");
     const img = DAY_IMAGES[day.num] ? `<figure class="img-card"><img src="${enc(DAY_IMAGES[day.num].file)}" alt="" loading="lazy" data-lb="1"><figcaption>${DAY_IMAGES[day.num].cap}</figcaption></figure>` : "";
-    const stops = day.stops.map(s => { const c = (CAT[s.cat] || CAT.logistics).c; return `<div class="stop"><div class="nm"><span class="num" style="background:${c}">${s.n}</span><span>${s.name_he} ${tagHtml(s.prio)}</span></div>
-      <div class="en">${s.name}</div><div class="nt">🕒 ${s.time} — ${s.notes}</div>
-      <div class="btnrow"><a class="btn small" target="_blank" rel="noopener" href="${s.maps}"><i class="fa-solid fa-map-location-dot"></i> Google Maps</a>
-      <button class="btn small ghost" data-focus="${day.num}|${s.n}"><i class="fa-solid fa-crosshairs"></i> במפה</button></div></div>`; }).join("");
-    const tl = day.items.map(it => { const idx = items.push({ day: day.num, it }) - 1; return `<div class="item"><div class="tm">${it.time || ""}</div><div class="tx">${tagHtml(it.tag)}${it.html}
-      ${it.sub.length ? `<div class="more"><button class="btn small ghost" data-more="${idx}"><i class="fa-solid fa-book-open"></i> קרא בהרחבה</button></div>` : ""}</div></div>`; }).join("");
+    const tl = day.items.map(it => {
+      const idx = items.push({ day: day.num, it }) - 1;
+      const stopIds = it.stops || [];
+      const navBtns = stopIds.map(n => {
+        const s = day.stops[n - 1];
+        const c = (CAT[s.cat] || CAT.logistics).c;
+        const lbl = stopIds.length > 1 ? `ניווט: ${s.name_he}` : "ניווט Google Maps";
+        return `<a class="btn small" target="_blank" rel="noopener" href="${s.maps}"><span class="pin-dot" style="background:${c}">${s.n}</span> <i class="fa-solid fa-map-location-dot"></i> ${lbl}</a>` +
+          `<button class="btn small ghost" data-focus="${day.num}|${s.n}"><i class="fa-solid fa-crosshairs"></i> במפה</button>`;
+      }).join("");
+      const moreBtn = it.sub.length ? `<button class="btn small ghost" data-more="${idx}"><i class="fa-solid fa-book-open"></i> קרא בהרחבה</button>` : "";
+      const actions = (navBtns || moreBtn) ? `<div class="btnrow">${navBtns}${moreBtn}</div>` : "";
+      return `<div class="item"><div class="tm">${it.time || ""}</div><div class="tx">${tagHtml(it.tag)}${it.html}${actions}</div></div>`;
+    }).join("");
     return `<div class="day" id="day-${day.num}" data-iso="${day.iso}">
       <div class="day-head" data-toggle="${day.num}"><div><h2><span>יום ${day.num} – ${day.weekday} ${dd}.2026</span></h2><div class="day-sub">${day.title}</div></div><i class="fa-solid fa-chevron-down chev"></i></div>
       <div class="day-body">
@@ -103,9 +112,7 @@ function renderDays() {
         ${bookings}
         ${day.intro.length ? `<div class="block"><h4><i class="fa-solid fa-route"></i> סקירת היום</h4>${day.intro.map(p => `<p>${p}</p>`).join("")}</div>` : ""}
         ${img}
-        <div class="block b"><h4><i class="fa-solid fa-location-dot"></i> תחנות ביום (כפתורי ניווט)</h4><div class="stops">${stops}</div>
-          <div class="btnrow"><button class="btn small orange" data-map-day="${day.num}"><i class="fa-solid fa-map"></i> הצג את היום במפה</button></div></div>
-        <div class="block"><h4><i class="fa-solid fa-clock"></i> לוח זמנים מפורט</h4><div class="tl">${tl}</div></div>
+        <div class="block"><div class="block-head"><h4><i class="fa-solid fa-clock"></i> לוח זמנים מפורט</h4><button class="btn small orange" data-map-day="${day.num}"><i class="fa-solid fa-map"></i> הצג את היום במפה</button></div><div class="tl">${tl}</div></div>
         <div class="block l"><h4><i class="fa-solid fa-bed"></i> לינה</h4><p>${day.lodging}</p></div>
       </div></div>`;
   }).join("");

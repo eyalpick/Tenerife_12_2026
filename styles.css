@@ -60,22 +60,17 @@ display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap
 .block{background:rgba(0,0,0,.2);border-right:4px solid var(--blue);border-radius:8px;padding:.9rem 1rem;margin-bottom:1rem}
 .block h4{margin-bottom:.4rem;color:var(--blue)}
 .block.w{border-right-color:var(--purple)}.block.w h4{color:var(--purple)}
-.block.b{border-right-color:var(--green)}.block.b h4{color:var(--green)}
 .block.l{border-right-color:var(--orange)}.block.l h4{color:var(--orange)}
 .block p{margin-bottom:.4rem}
-.stops{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.6rem}
-.stop{background:rgba(255,255,255,.04);border:1px solid var(--bd);border-radius:10px;padding:.6rem .8rem;display:flex;flex-direction:column;gap:.3rem}
-.stop .nm{font-weight:700;display:flex;gap:.5rem;align-items:flex-start}
-.stop .num{min-width:24px;height:24px;border-radius:50%;color:#fff;font-size:.8rem;display:flex;align-items:center;justify-content:center}
-.stop .en{color:var(--mut);font-size:.82rem;direction:ltr;text-align:right}
-.stop .nt{color:var(--tx2);font-size:.88rem}
+.block-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:.6rem}
+.block-head h4{margin-bottom:0}
+.pin-dot{width:18px;height:18px;border-radius:50%;color:#fff;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.7);flex-shrink:0}
 .tl{display:flex;flex-direction:column;gap:.55rem}
 .item{display:flex;gap:.8rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:9px;padding:.7rem .9rem}
 .item .tm{min-width:92px;color:var(--orange);font-weight:700;direction:ltr;text-align:right;font-size:.95rem}
 .item .tx{flex:1;font-size:.97rem}
 .tag{display:inline-block;font-size:.74rem;padding:.05rem .55rem;border-radius:10px;margin-left:.4rem;vertical-align:middle;color:#fff}
 .tag.must{background:var(--red)}.tag.rec{background:#ca8a04}.tag.opt{background:var(--green)}.tag.drive{background:#475569}
-.item .more{margin-top:.4rem}
 .img-card{margin:1rem 0;text-align:center}.img-card img{max-width:100%;max-height:420px;border-radius:10px;border:1px solid var(--bd);cursor:zoom-in}
 .img-card figcaption{color:var(--mut);font-size:.85rem;margin-top:.3rem}
 .booking{border:1px solid rgba(16,185,129,.4);background:rgba(16,185,129,.08);border-radius:10px;padding:.7rem 1rem;margin-bottom:.7rem}
